@@ -17,6 +17,7 @@ privat - в это свойство поместиь boolean (логическо
 movies: {
 	"logan": "8.1"
 }
+Проверить выполнение кода через console.log
 */
 
 const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
