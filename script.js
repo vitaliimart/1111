@@ -1,7 +1,10 @@
 
-/* 
+/*----------------------------------------------------------------------------------------------------------
+PRACTICE - PART 1
+
 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос: 
 "Сколько фильмов Вы уже посмотрели?"
+
 2) Создать объект personalMovieDB и в него поместить такие свойства:
 count - сюда передается ответ на первый вопрос;
 movies - в это свойство поместить пустой объект;
@@ -19,55 +22,126 @@ movies: {
 	"logan": "8.1"
 }
 Проверить выполнение кода через console.log
+---------------------------------------------------------------------------------------------------------------
+*/
+/*
+"use strict";
+const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
+
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+const a = prompt("Один из последних просмотренных фильмов?", ""),
+      b = prompt("На сколько оцените его?", ""),
+      c = prompt("Один из последних просмотренных фильмов?", ""),
+      d = prompt("На сколько оцените его?", "");
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
 */
 
-// const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
+/*--------------------------------------------------------------------------------------------------------------
+PRACTICE - PART 2
 
-// const personalMovieDB = {
-// 	count: numberOfFilms,
-// 	movies: {},
-// 	actors: {},
-// 	genres: [],
-// 	privat: false
-// };
-// const a = prompt("Один из последних просмотренных фильмов?", ""),
-//       b = prompt("На сколько оцените его?", ""),
-//       c = prompt("Один из последних просмотренных фильмов?", ""),
-//       d = prompt("На сколько оцените его?", "");
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки, отменить ответ или ввести 
+название фильма длиннее, чем 50 символов. Если это происходит - возвращаем пользователя к вопросам опять.
+(К любой строке можно обратиться как str.length - и получить её длину)
 
-// console.log(personalMovieDB);
+3) При помощи условий проверить personalMovieDB.count и 
+если он меньше 10 - вывести сообщение "Просмотрено довольно мало фильмов",
+если от 10 до 30 - "Вы классический зритель",
+если больше 30 - "Вы киноман",
+если не подошло ни к одному варианту - "Произошла ошибка".
+
+4) Потренироваться и переписать цикл ещё двумя способами.
+------------------------------------------------------------------------------------------------------------------
+*/
+"use strict";
+const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
+
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+
+for (let i = 0; i < 2; i++) {
+	const a = prompt("Один из последних просмотренных фильмов?", ""),
+         b = prompt("На сколько оцените его?", "");
+	
+	if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+		personalMovieDB.movies[a] = b;
+		console.log("Success");
+	} else {
+		console.log("Error");
+		i--;
+	}
+}
+
+if (personalMovieDB.count < 10) {
+	console.log("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+	console.log("Вы классический зритель");
+} else if (personalMovieDB.count > 30) {
+	console.log("Вы киноман");
+} else {
+	console.log("Произошла ошибка");
+}
+console.log(personalMovieDB);
+
+
+/*-------------------------------------------------------------------------------------------------------------------
+PRACTICE - PART 3
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+*/
+
+
 
 //-------------------------------------------------------------------------------------------------------------------
-let number = 4.6;
-console.log(4/4);
-console.log(4/0);
-console.log(-4/0);
-console.log("aaaa"/0);
-console.log(0/"aaaa");
-console.log("dgfgfg"/"aaaa");
-console.log("2"/"2");
-console.log("2"/"0");
-console.log(""/"2");
+// let number = 4.6;
+// console.log(4/4);
+// console.log(4/0);
+// console.log(-4/0);
+// console.log("aaaa"/0);
+// console.log(0/"aaaa");
+// console.log("dgfgfg"/"aaaa");
+// console.log("2"/"2");
+// console.log("2"/"0");
+// console.log(""/"2");
 
-const personel ="Alex";
-console.log(personel);
+// const personel ="Alex";
+// console.log(personel);
 
-// let weddf;
-// console.log(weddf);
+// // let weddf;
+// // console.log(weddf);
 
-// const obj = {
-// 	name: "Alex",
-// 	surname: "Smith",
-// 	age: 32,
-// 	isMarried: true
-// };
-// console.log(obj["name"]);
-// console.log(obj["age"]);
-// console.log(typeof(obj["age"]));
-// console.log(typeof(obj["isMarried"]));
+// // const obj = {
+// // 	name: "Alex",
+// // 	surname: "Smith",
+// // 	age: 32,
+// // 	isMarried: true
+// // };
+// // console.log(obj["name"]);
+// // console.log(obj["age"]);
+// // console.log(typeof(obj["age"]));
+// // console.log(typeof(obj["isMarried"]));
 
-const arr = ["plum.png", {a: 1, b: "str", c: true}, 23, [true, false]];
-console.log(arr[1]);
+// const arr = ["plum.png", {a: 1, b: "str", c: true}, 23, [true, false]];
+// console.log(arr[1]);
