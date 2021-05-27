@@ -64,40 +64,40 @@ PRACTICE - PART 2
 4) Потренироваться и переписать цикл ещё двумя способами.
 ------------------------------------------------------------------------------------------------------------------
 */
-"use strict";
-const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
+// "use strict";
+// const numberOfFilms = prompt("Сколько фильмов Вы уже посмотрели?", "");
 
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// };
 
-for (let i = 0; i < 2; i++) {
-	const a = prompt("Один из последних просмотренных фильмов?", ""),
-         b = prompt("На сколько оцените его?", "");
+// for (let i = 0; i < 2; i++) {
+// 	const a = prompt("Один из последних просмотренных фильмов?", ""),
+//          b = prompt("На сколько оцените его?", "");
 	
-	if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-		personalMovieDB.movies[a] = b;
-		console.log("Success");
-	} else {
-		console.log("Error");
-		i--;
-	}
-}
+// 	if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+// 		personalMovieDB.movies[a] = b;
+// 		console.log("Success");
+// 	} else {
+// 		console.log("Error");
+// 		i--;
+// 	}
+// }
 
-if (personalMovieDB.count < 10) {
-	console.log("Просмотрено довольно мало фильмов");
-} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
-	console.log("Вы классический зритель");
-} else if (personalMovieDB.count > 30) {
-	console.log("Вы киноман");
-} else {
-	console.log("Произошла ошибка");
-}
-console.log(personalMovieDB);
+// if (personalMovieDB.count < 10) {
+// 	console.log("Просмотрено довольно мало фильмов");
+// } else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+// 	console.log("Вы классический зритель");
+// } else if (personalMovieDB.count > 30) {
+// 	console.log("Вы киноман");
+// } else {
+// 	console.log("Произошла ошибка");
+// }
+// console.log(personalMovieDB);
 
 
 /*-------------------------------------------------------------------------------------------------------------------
@@ -112,36 +112,44 @@ false - выводит в консоль главный объект прогр�
 genres
 */
 
-
-
 //-------------------------------------------------------------------------------------------------------------------
-// let number = 4.6;
-// console.log(4/4);
-// console.log(4/0);
-// console.log(-4/0);
-// console.log("aaaa"/0);
-// console.log(0/"aaaa");
-// console.log("dgfgfg"/"aaaa");
-// console.log("2"/"2");
-// console.log("2"/"0");
-// console.log(""/"2");
+"use strict";
 
-// const personel ="Alex";
-// console.log(personel);
+let num = 20;
 
-// // let weddf;
-// // console.log(weddf);
+function showFirstMessage(text) {
+	let num = 100;
+	console.log(text);
+	console.log(num);
+}
 
-// // const obj = {
-// // 	name: "Alex",
-// // 	surname: "Smith",
-// // 	age: 32,
-// // 	isMarried: true
-// // };
-// // console.log(obj["name"]);
-// // console.log(obj["age"]);
-// // console.log(typeof(obj["age"]));
-// // console.log(typeof(obj["isMarried"]));
+showFirstMessage("Hi, world!");
+console.log(num);
 
-// const arr = ["plum.png", {a: 1, b: "str", c: true}, 23, [true, false]];
-// console.log(arr[1]);
+// console.log(calc(2, 3));
+// console.log(calc(12, 33));
+// console.log(calc(31, -19));
+
+// function calc(a, b) {
+// 	return (a + b);
+// }
+
+function ret() {
+	let num = 50;
+	// Выполняется какой-то код
+	return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function() {
+	console.log("Hello");
+};
+
+logger();
+
+const calc = (a, b) => {
+	console.log("1");
+	return a + b;
+};
