@@ -115,41 +115,26 @@ genres
 //-------------------------------------------------------------------------------------------------------------------
 "use strict";
 
-let num = 20;
+const str = "test";
+// const arr = [1, 2, 4];
+// console.log(str[2]);
+// console.log(str.length);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
 
-function showFirstMessage(text) {
-	let num = 100;
-	console.log(text);
-	console.log(num);
-}
+const fruits = "Some fruit";
+console.log(fruits.indexOf("q"));
 
-showFirstMessage("Hi, world!");
-console.log(num);
+const logg = "Hello world";
+console.log(logg.length);
+console.log(logg.slice(6, 11));
+console.log(logg.slice(-5));
+console.log(logg.substring(6, 11));
+console.log(logg.substr(6, 5));
 
-// console.log(calc(2, 3));
-// console.log(calc(12, 33));
-// console.log(calc(31, -19));
+const num = 12.2;
+console.log(Math.round(num));
 
-// function calc(a, b) {
-// 	return (a + b);
-// }
-
-function ret() {
-	let num = 50;
-	// Выполняется какой-то код
-	return num;
-}
-
-const anotherNum = ret();
-console.log(anotherNum);
-
-const logger = function() {
-	console.log("Hello");
-};
-
-logger();
-
-const calc = (a, b) => {
-	console.log("1");
-	return a + b;
-};
+const test = "15.2px";
+console.log(parseInt(test));
+console.log(parseFloat(test));
