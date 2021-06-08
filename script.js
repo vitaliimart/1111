@@ -99,10 +99,10 @@ PRACTICE - PART 2
 // }
 // console.log(personalMovieDB);
 
-
 /*-------------------------------------------------------------------------------------------------------------------
 PRACTICE - PART 3
 1) Первую часть задания повторить по уроку
+то есть, автоматизировать вопросы пользователю про фильмы при помощи цикла
 
 2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
 false - выводит в консоль главный объект программы
@@ -111,30 +111,99 @@ false - выводит в консоль главный объект прогр�
 "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
 genres
 */
-
-//-------------------------------------------------------------------------------------------------------------------
 "use strict";
 
-const str = "test";
+let numberOfFilms;
+
+function start() {
+	numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
+
+	while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+		numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
+	}
+}
+
+start();
+
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+
+function rememberMyFilms() {
+	for (let i = 0; i < 2; i++) {
+		const a = prompt("Один из последних просмотренных фильмов?", ""),
+				b = prompt("На сколько оцените его?", "");
+		
+		if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+			personalMovieDB.movies[a] = b;
+			console.log("Success");
+		} else {
+			console.log("Error");
+			i--;
+		}
+	}
+}
+
+rememberMyFilms();
+
+function detectPersonalMovie() {
+	if (personalMovieDB.count < 10) {
+		console.log("Просмотрено довольно мало фильмов");
+	} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+		console.log("Вы классический зритель");
+	} else if (personalMovieDB.count > 30) {
+		console.log("Вы киноман");
+	} else {
+		console.log("Произошла ошибка");
+	}
+}
+
+detectPersonalMovie();
+
+function showMyDB(hidden) {
+	if(!hidden) {
+		console.log(personalMovieDB);
+	}
+}
+
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres () {
+	for ( let i = 1; i <= 3; i++) {
+		personalMovieDB.genres[i - 1]= prompt(`Ваш любимый жанр под номером ${i}`,);
+	}
+	
+}
+writeYourGenres ();
+//-------------------------------------------------------------------------------------------------------------------
+// "use strict";
+
+// const str = "test";
 // const arr = [1, 2, 4];
-// console.log(str[2]);
-// console.log(str.length);
-console.log(str.toUpperCase());
-console.log(str.toLowerCase());
+// // console.log(str[2]);
+// // console.log(arr[1]);
+// // console.log(str.length);
+// // console.log(arr.length);
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
 
-const fruits = "Some fruit";
-console.log(fruits.indexOf("q"));
+// const fruits = "Some_fruit";
+// console.log(fruits.indexOf("f"));
 
-const logg = "Hello world";
-console.log(logg.length);
-console.log(logg.slice(6, 11));
-console.log(logg.slice(-5));
-console.log(logg.substring(6, 11));
-console.log(logg.substr(6, 5));
+// const logg = "Hello_worldishche";
+// // console.log(logg.length);
+// console.log(logg.slice(6, 13));
+// // console.log(logg.slice(-5));
+// console.log(logg.substring(6, 14));
+// console.log(logg.substr(6, 2));
 
-const num = 12.2;
-console.log(Math.round(num));
+// const num = 12.95;
+// console.log(Math.round(num));
 
-const test = "15.2px";
-console.log(parseInt(test));
-console.log(parseFloat(test));
+// const test = "15.49px";
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
