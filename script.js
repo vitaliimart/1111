@@ -207,26 +207,65 @@ genres
 // const test = "15.49px";
 // console.log(parseInt(test));
 // console.log(parseFloat(test));
-function first () {
-	setTimeout(function() {
-		console.log("1");
-	},	500);
+// function first () {
+// 	setTimeout(function() {
+// 		console.log("1");
+// 	},	500);
+// }
+
+// function second () {
+// 	console.log("2");
+// }
+
+// first();
+// second();
+
+// function learnJJ(lang, callback) {
+// 	console.log(`Я учу: ${lang}`);
+// 	callback();
+// }
+
+// function done() {
+// 	console.log("Я прошёл первый урок");
+// }
+
+// learnJJ("JavaScript", done);
+"use strict";
+
+const options = {
+	name: "test",
+	width: 1024,
+	height: 1024,
+	colors: {
+		border: "black",
+		bg: "red"
+	},
+	makeTest: function() {
+		console.log("Some text");
+	}
+};
+options.makeTest();
+
+const {border, bg} = options.colors;
+console.log(border);
+
+console.log(options.name);
+delete options.name;
+console.log(options);
+console.log(options['colors']['border']);
+let counter = 0;
+for (let key in options) {
+	if (typeof(options[key]) === 'object') {
+		for (let i in options[key]){
+			console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+			// counter++;
+		}
+	} else {
+		console.log(`Свойство ${key} имеет значение ${options[key]}`);
+		counter++;
+	}
 }
 
-function second () {
-	console.log("2");
-}
-
-first();
-second();
-
-function learnJJ(lang, callback) {
-	console.log(`Я учу: ${lang}`);
-	callback();
-}
-
-function done() {
-	console.log("Я прошёл первый урок");
-}
-
-learnJJ("JavaScript", done);
+console.log(counter);
+console.log(Object.keys(options));
+console.log(Object.keys(options).length);
