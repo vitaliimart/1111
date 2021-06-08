@@ -111,74 +111,74 @@ false - выводит в консоль главный объект прогр�
 "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
 genres
 */
-"use strict";
+// "use strict";
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-	numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
+// function start() {
+// 	numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
 
-	while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-		numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
-	}
-}
+// 	while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+// 		numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
+// 	}
+// }
 
-start();
+// start();
 
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false
+// };
 
-function rememberMyFilms() {
-	for (let i = 0; i < 2; i++) {
-		const a = prompt("Один из последних просмотренных фильмов?", ""),
-				b = prompt("На сколько оцените его?", "");
+// function rememberMyFilms() {
+// 	for (let i = 0; i < 2; i++) {
+// 		const a = prompt("Один из последних просмотренных фильмов?", ""),
+// 				b = prompt("На сколько оцените его?", "");
 		
-		if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-			personalMovieDB.movies[a] = b;
-			console.log("Success");
-		} else {
-			console.log("Error");
-			i--;
-		}
-	}
-}
+// 		if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+// 			personalMovieDB.movies[a] = b;
+// 			console.log("Success");
+// 		} else {
+// 			console.log("Error");
+// 			i--;
+// 		}
+// 	}
+// }
 
-rememberMyFilms();
+// rememberMyFilms();
 
-function detectPersonalMovie() {
-	if (personalMovieDB.count < 10) {
-		console.log("Просмотрено довольно мало фильмов");
-	} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
-		console.log("Вы классический зритель");
-	} else if (personalMovieDB.count > 30) {
-		console.log("Вы киноман");
-	} else {
-		console.log("Произошла ошибка");
-	}
-}
+// function detectPersonalMovie() {
+// 	if (personalMovieDB.count < 10) {
+// 		console.log("Просмотрено довольно мало фильмов");
+// 	} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+// 		console.log("Вы классический зритель");
+// 	} else if (personalMovieDB.count > 30) {
+// 		console.log("Вы киноман");
+// 	} else {
+// 		console.log("Произошла ошибка");
+// 	}
+// }
 
-detectPersonalMovie();
+// detectPersonalMovie();
 
-function showMyDB(hidden) {
-	if(!hidden) {
-		console.log(personalMovieDB);
-	}
-}
+// function showMyDB(hidden) {
+// 	if(!hidden) {
+// 		console.log(personalMovieDB);
+// 	}
+// }
 
-showMyDB(personalMovieDB.privat);
+// showMyDB(personalMovieDB.privat);
 
-function writeYourGenres () {
-	for ( let i = 1; i <= 3; i++) {
-		personalMovieDB.genres[i - 1]= prompt(`Ваш любимый жанр под номером ${i}`,);
-	}
+// function writeYourGenres () {
+// 	for ( let i = 1; i <= 3; i++) {
+// 		personalMovieDB.genres[i - 1]= prompt(`Ваш любимый жанр под номером ${i}`,);
+// 	}
 	
-}
-writeYourGenres ();
+// }
+// writeYourGenres ();
 //-------------------------------------------------------------------------------------------------------------------
 // "use strict";
 
@@ -207,3 +207,26 @@ writeYourGenres ();
 // const test = "15.49px";
 // console.log(parseInt(test));
 // console.log(parseFloat(test));
+function first () {
+	setTimeout(function() {
+		console.log("1");
+	},	500);
+}
+
+function second () {
+	console.log("2");
+}
+
+first();
+second();
+
+function learnJJ(lang, callback) {
+	console.log(`Я учу: ${lang}`);
+	callback();
+}
+
+function done() {
+	console.log("Я прошёл первый урок");
+}
+
+learnJJ("JavaScript", done);
