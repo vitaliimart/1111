@@ -536,7 +536,7 @@ const personalMovieDB = {
 };
 */
 "use strict";
-
+/*
 // To String
 // 1)
 console.log(typeof(String(null)));
@@ -591,3 +591,57 @@ console.log(typeof("444"));
 console.log(typeof(!"444"));
 
 console.log(typeof(! 444));
+*/
+
+let z = 5;
+
+console.log(z++); // 5
+console.log(--z); // 4
+
+let sum = [] + false  - null + true;
+console.log(sum); // NaN
+console.log(typeof(sum)); // number
+
+let y = 1;
+let x = y = 2;
+// alert(x); // 2
+console.log(x); // 2
+console.log(y); // 2
+
+let sum2 = [] + 1 + 2;
+console.log(sum2); // 12
+console.log(typeof(sum2)); // string
+
+// alert("1"[0]);
+console.log("1"[0]); // 1
+console.log(typeof("1"[0])); // string
+
+console.log(2 && 1 && null && 0 && undefined); // null
+// оператор "И" (&&) запинается на лжи
+// оператор "ИЛИ" (||) запинается на правде
+
+// let a = b = 1;
+
+console.log(typeof(!!(1 && 2) == (1 && 2))); // false
+console.log((1 && 2) == (1 && 2)); // true
+console.log(3 && 32); // 32
+
+// alert(null || 2 && 3 || 4);
+console.log(null || 2 && 3 || 4); // 3
+
+const a = [1, 2, 3];
+const b = [1, 2, 3];
+console.log(a == b); // false
+
+
+alert(+"Infinity");
+console.log(+"Infinity"); // Infinity
+console.log(typeof(+"Infinity")); // number
+console.log(typeof("Infinity")); // string
+
+const one = "Ёжик";
+const two = "яблоко";
+console.log(one.length > two.length); // false
+console.log("Ёжик"> "яблоко"); // false
+
+console.log(0 || "" || 2 || undefined || true || false); // 2
