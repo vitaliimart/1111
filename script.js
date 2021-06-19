@@ -456,6 +456,7 @@ genres
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
+/*
 "use strict";
 
 const personalMovieDB = {
@@ -533,3 +534,60 @@ const personalMovieDB = {
 		});
 	}
 };
+*/
+"use strict";
+
+// To String
+// 1)
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+console.log(String(null));
+// 2)
+console.log(typeof(5 + ''));
+console.log(typeof(null + ''));
+console.log(typeof(undefined + ''));
+
+const num = 5;
+
+console.log("https://vk.com/catalog/" + num);
+
+const fontSize = 26 + 'px';
+
+// To Number
+
+//1)
+console.log(typeof(Number("4")));
+//2)
+console.log(typeof(+"four"));
+// 3)
+console.log(typeof(parseInt("15px", 10)));
+
+let answ = +prompt('Hello', '');
+
+// To boolean
+// 0, '', null, undefined, NaN - false
+// все остальное - true
+
+//1)
+let switcher = null;
+
+if (switcher) {
+	console.log('working...');
+}
+
+switcher = 1;
+if (switcher) {
+	console.log('working...');
+}
+
+//2)
+console.log(typeof(Boolean("4")));
+
+//3)
+console.log(typeof(!!"444"));
+
+console.log(typeof("444"));
+
+console.log(typeof(!"444"));
+
+console.log(typeof(! 444));
